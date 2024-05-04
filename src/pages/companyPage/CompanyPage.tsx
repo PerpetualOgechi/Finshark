@@ -7,6 +7,7 @@ import CompanyDashboard from '../../components/companyDashboard/CompanyDashboard
 import Title from '../../components/title/Title'
 import Spinner from '../../components/spinner/Spinner'
 import CompFinder from '../../components/compFinder/CompFinder'
+import TenkFinder from '../../components/tenkFinder/TenkFinder'
 
 interface Props {}
 
@@ -30,10 +31,11 @@ const CompanyPage = (props: Props) => {
 
           <CompanyDashboard ticker={ticker!}>
             <Title title="Company Name" subTitle={company.companyName}></Title>
-            <Title title="Price" subTitle={company.price.toString()}></Title>
+            <Title title="Price" subTitle={"$" + company.price.toString()}></Title>
+            <Title title="DCF" subTitle={"$" + company.dcf.toString()}></Title>
             <Title title="Sector" subTitle={company.sector}></Title>
-            <Title title="DCF" subTitle={company.dcf.toString()}></Title>
             <CompFinder ticker={company.symbol} />
+            <TenkFinder ticker={company.symbol} />
             {/* <p className='bg-white shadow rounded text-medium text-gray-900 p-3 mt-1 m-4'>{company.description}</p> */}
           </CompanyDashboard>
 

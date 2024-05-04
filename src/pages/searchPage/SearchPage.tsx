@@ -10,7 +10,7 @@ import CardList from '../../components/cardList/CardList';
 interface Props {}
 
 const SearchPage = (props: Props) => {
-    const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<string>("");
   const [portfolioValues, setPortfolioValues] = useState<string[]>([])
   const [searchResult, setSearchResult] = useState<CompanySearch[]>([])
   const [serverError, setServerError] = useState<string>("")

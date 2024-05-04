@@ -1,6 +1,6 @@
 // import { queries } from "@testing-library/react";
 import axios from "axios";
-import { CompanyBalanceSheet, CompanyCashFlow, CompanyCompData, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanySearch } from "./company";
+import { CompanyBalanceSheet, CompanyCashFlow, CompanyCompData, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanySearch, CompanyTenK } from "./company";
 
 
 interface searchResponse {
@@ -91,6 +91,18 @@ export const getCompData = async (query: string) => {
     try{
         const data = await axios.get<CompanyCompData[]>(
             `https://financialmodelingprep.com/api/v4/stock-peers?symbol=${query}&apikey=68a4f49a8278f92820658e3e3aa9a120`
+        )
+        return data
+    } catch(error: any) {
+        console.log("Error message from API:", error.message)
+
+    }
+}
+
+export const getTenk = async (query: string) => {
+    try{
+        const data = await axios.get<CompanyTenK[]>(
+            `https://financialmodelingprep.com/api/v3/sec_filings/${query}?type=10-k&page=0&apikey=68a4f49a8278f92820658e3e3aa9a120`
         )
         return data
     } catch(error: any) {
