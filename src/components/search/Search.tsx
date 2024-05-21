@@ -1,6 +1,8 @@
-import React, { ChangeEvent, SyntheticEvent, useState } from 'react'
+import React, { ChangeEvent, SyntheticEvent } from 'react'
+
 
 interface Props {
+  
   onSearchSubmit: (e: SyntheticEvent) => void;
   search: string | undefined;
   handleSearchChange: (e: ChangeEvent<HTMLInputElement>) => void
@@ -9,6 +11,7 @@ interface Props {
 const Search: React.FC<Props> = ({onSearchSubmit, search, handleSearchChange}: Props): JSX.Element => {
    
   return (
+    
     <section className="relative bg-gray-100">
       <div className="max-w-4xl mx-auto p-6 space-y-6">
         <form
@@ -22,6 +25,7 @@ const Search: React.FC<Props> = ({onSearchSubmit, search, handleSearchChange}: P
             value={search}
             onChange={handleSearchChange}
           ></input>
+          <button onClick={onSearchSubmit} className='bg-lightGreen p-5 rounded text-white'>Search</button>
         </form>
       </div>
     </section>

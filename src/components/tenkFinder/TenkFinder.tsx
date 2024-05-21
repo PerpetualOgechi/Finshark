@@ -18,7 +18,7 @@ const TenkFinder = ({ticker}: Props) => {
         getTenKData()
     }, [])
   return (
-    <div className='inline-flex rounded-md shadow-sm m-4'>
+    <div className='inline-flex justify-center rounded-md shadow-sm m-4 flex-wrap gap-5'>
         {
             companyData? (
                 companyData.slice(0, 5).map((tenk) => {

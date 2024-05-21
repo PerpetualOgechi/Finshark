@@ -40,7 +40,7 @@ const Table = ({config, data}: Props) => {
         return (
             
             <th 
-            className='p-4  text-left text-sm font-medium text-grey-500 uppercase tracking-wider' 
+            className='p-4  text-center text-sm font-medium text-grey-500 uppercase tracking-wider' 
             key={config.label}
             
             >{config.label}</th>

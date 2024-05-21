@@ -90,7 +90,11 @@ const IncomeStatement = (props: Props) => {
   {
     incomeStatement ? 
     (<>
+    <div className='overflow-x-auto'>
+      <div  className='w-[800px] md:w-full'>
     <Table data={incomeStatement} config={configs} />
+    </div>
+    </div>
     </>) 
     : (
       <Spinner />

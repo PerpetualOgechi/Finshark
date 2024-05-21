@@ -18,7 +18,6 @@ type UserContextType = {
 };
 
 type Props = { children: React.ReactNode };
-
 const UserContext = createContext<UserContextType>({} as UserContextType);
 
 export const UserProvider = ({ children }: Props) => {
@@ -41,11 +40,14 @@ export const UserProvider = ({ children }: Props) => {
   const registerUser = async (
     email: string,
     username: string,
-    password: string
+    password: string,
+   
   ) => {
     await registerAPI(email, username, password)
       .then((res) => {
+        
         if (res) {
+          
           localStorage.setItem("token", res?.data.token);
           const userObj = {
             userName: res?.data.userName,

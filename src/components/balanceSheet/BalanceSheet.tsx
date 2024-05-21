@@ -93,9 +93,11 @@ const BalanceSheet = () => {
   {
     balanceSheet? 
     (<>
+    <div className='w-full'>
     { <RatioList config={config} data={balanceSheet} /> 
     // <Table config={config} data={balanceSheet} />
     }
+    </div>
     </>) 
     : (
         <Spinner />

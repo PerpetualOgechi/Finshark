@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useAuth } from "../../context/useAuth";
 import { useForm } from "react-hook-form";
+import Spinner from "../../components/spinner/Spinner";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -17,6 +19,7 @@ const validation = Yup.object().shape({
 });
 
 const LoginPage = (props: Props) => {
+  
   const { loginUser } = useAuth();
   const {
     register,
@@ -25,7 +28,7 @@ const LoginPage = (props: Props) => {
   } = useForm<LoginFormsInputs>({ resolver: yupResolver(validation) });
 
   const handleLogin = (form: LoginFormsInputs) => {
-    console.log(form.userName)
+    console.log(form.userName) 
     loginUser(form.userName, form.password);
   };
   return (
@@ -96,12 +99,12 @@ const LoginPage = (props: Props) => {
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Don’t have an account yet?{" "}
-                <a
-                  href="#"
+                <Link
+                  to="/register"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Sign up
-                </a>
+                </Link>
               </p>
             </form>
           </div>

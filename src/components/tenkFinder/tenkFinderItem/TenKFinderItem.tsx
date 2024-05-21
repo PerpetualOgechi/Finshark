@@ -12,7 +12,7 @@ const TenkFinderItem = ({ tenK }: Props) => {
   reloadDocument
   to={tenK.finalLink}
   type='button'
-  className='inline-flex items-center p-4 text-md mr-5 text-white bg-lightGreen rounded-md'>10k - {tenK.symbol} - {fillingDate}</Link>
+  className='inline-flex min-w-[100px] items-center justify-center p-4 text-md mr-5 text-white bg-lightGreen rounded-md'>10k - {tenK.symbol} - {fillingDate}</Link>
 }
 
 export default TenkFinderItem

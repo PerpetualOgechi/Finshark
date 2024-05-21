@@ -69,7 +69,11 @@ const CashFlowStatement = (props: props) => {
     cashFlowData ? 
     (
         <>
-        <Table config={config} data={cashFlowData} />
+        <div className='overflow-x-auto'>
+          <div className='w-[800px] md:w-full'>
+          <Table config={config} data={cashFlowData} />
+          </div>
+        </div>
         </>
     ) 
     : (

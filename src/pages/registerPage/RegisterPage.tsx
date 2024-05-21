@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useAuth } from "../../context/useAuth";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 type Props = {}
 
@@ -19,6 +20,7 @@ type RegisterFormsInputs = {
   });
 
 const RegisterPage = (props: Props) => {
+  
     const { registerUser } = useAuth();
     const {
       register,
@@ -28,7 +30,9 @@ const RegisterPage = (props: Props) => {
   
     const handleLogin = (form: RegisterFormsInputs) => {
       console.log(form.userName)
+      
       registerUser(form.email, form.userName, form.password);
+      
     };
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
@@ -119,12 +123,12 @@ const RegisterPage = (props: Props) => {
             </button>
             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
               Don’t have an account yet?{" "}
-              <a
-                href="#"
+              <Link
+                to="/login"
                 className="font-medium text-primary-600 hover:underline dark:text-primary-500"
               >
-                Sign up
-              </a>
+                Sign In
+              </Link>
             </p>
           </form>
         </div>

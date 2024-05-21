@@ -8,7 +8,8 @@ interface Props {
 
 const CompanyDashboard = ({children, ticker}: Props) => {
   return (
-    <div className="relative md:ml-64 bg-blueGray-100 w-full">
+    // md:ml-64
+    <div className="relative sb:ml-64 bg-blueGray-100 w-full">
 
             <div className="relative pt-20 pb-32 bg-lightBlue-500">
 

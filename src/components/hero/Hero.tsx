@@ -1,6 +1,8 @@
 import React from 'react'
 import hero from "./hero.png"
 import { Link } from 'react-router-dom'
+import Footer from '../footer/Footer'
+
 
 interface Props {}
 
@@ -29,6 +31,7 @@ const Hero = (props: Props) => {
           <img src={hero} alt="" />
         </div>
       </div>
+      <Footer />
     </section>
   )
 }
