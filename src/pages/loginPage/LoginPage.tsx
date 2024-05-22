@@ -20,7 +20,7 @@ const validation = Yup.object().shape({
 
 const LoginPage = (props: Props) => {
   
-  const { loginUser } = useAuth();
+  const { loginUser, isLoading } = useAuth();
   const {
     register,
     handleSubmit,
@@ -110,6 +110,9 @@ const LoginPage = (props: Props) => {
           </div>
         </div>
       </div>
+      {
+        isLoading && <Spinner />
+      }
     </section>
   );
 };

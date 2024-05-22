@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useAuth } from "../../context/useAuth";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import Spinner from "../../components/spinner/Spinner";
 
 type Props = {}
 
@@ -21,7 +22,7 @@ type RegisterFormsInputs = {
 
 const RegisterPage = (props: Props) => {
   
-    const { registerUser } = useAuth();
+    const { registerUser, isLoading } = useAuth();
     const {
       register,
       handleSubmit,
@@ -134,6 +135,9 @@ const RegisterPage = (props: Props) => {
         </div>
       </div>
     </div>
+    {
+        isLoading && <Spinner />
+    }
   </section>
   )
 }
